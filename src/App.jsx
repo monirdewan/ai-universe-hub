@@ -1,11 +1,16 @@
+import Button from "./assets/component/Button/Button";
+import Card from "./assets/component/Card/Card";
+import Header from "./assets/component/Header/Header";
 
 
 const App = () => {
   return (
-    <div>
-     <button className="btn btn-active btn-neutral">Neutral</button>
-     <button className="btn btn-active btn-primary">Primary</button>
-    </div>
+    <>
+    <Header />
+    <Button>Short By Date</Button>
+    <Card />
+   
+    </>
   );
 };
 
