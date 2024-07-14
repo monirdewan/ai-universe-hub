@@ -1,9 +1,11 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import SingleData from '../SingleData/SingleData';
 
-const Card = () => {
+const Card = (props) => {
     const [data, setData] = useState([]);
+    
 
    useEffect(()=>{
     const loadData = async()=>{
@@ -19,7 +21,7 @@ const Card = () => {
        <>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:px-12 my-6'>
                 {
-                    data.map((singleData)=>{
+                    data.slice(0,props.showAll?12:6).map((singleData)=>{
                     
                         return <SingleData key={singleData.id} singleData={singleData} />
                     })
